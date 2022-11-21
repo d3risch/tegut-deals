@@ -61,7 +61,7 @@ if __name__ == "__main__":
             sys.exit()
 
         # Wait for deals buttons to be visible and click all of them. Opens new tabs.
-        WebDriverWait(driver, 4).until(expected_conditions.visibility_of_any_elements_located(By.XPATH, "//a[@class='button trackEvent']"))
+        WebDriverWait(driver, 4).until(expected_conditions.visibility_of_element_located((By.XPATH, "//a[@class='button trackEvent']")))
 
         elems = driver.find_elements(By.XPATH, "//a[@class='button trackEvent']")
         for elem in elems:
