@@ -1,6 +1,6 @@
-Default location is Frankfurt but if you want to get your local leaflet just use a PLZ as an argument.
+Running the download-action results in an artifact which holds the leaflet pdf.
 
-To run locally on a basic Ubunutu version:
+Default location is Frankfurt but if you want to get your local leaflet just use a PLZ as an argument. To run locally on a basic Ubunutu version check first if your installed chrome version already works if not use:
 ```
 sudo apt purge google-chrome-stable
 sudo apt purge chromium-browser
