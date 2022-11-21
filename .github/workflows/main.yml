@@ -1,7 +1,8 @@
 name: download
 on:
   schedule:
-    - cron '0 10 * * 1'
+    - cron: '0 10 * * 1'
+    
 jobs:
   scrape:
     runs-on: ubuntu-latest
