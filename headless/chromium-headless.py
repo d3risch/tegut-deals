@@ -61,8 +61,15 @@ if __name__ == "__main__":
             sys.exit()
 
         # Wait for deals button to load and click it. Opens new tab.
-        viewDealsButton = WebDriverWait(driver, 4).until(expected_conditions.element_to_be_clickable((By.XPATH, '/html/body/main/article/div/div/div/div[1]/div/div/div[2]/div/div/div[1]/div/a')))
-        viewDealsButton.click()
+        viewDealsButton = WebDriverWait(driver, 4).until(expected_conditions.element_to_be_clickable(By.XPATH), "//a[@class='button trackEvent']")
+        buttons = driver.find_elements(By.XPATH, "//a[@class='button trackEvent']")
+        if len(buttons) < 1:
+            print("There are no leaflets in the selected market.")
+            driver.close()
+            sys.exit()
+
+        for button in buttons:
+            button.click()
 
         # Wait for download to finish or break if 20 seconds have passed.
         download = True
