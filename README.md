@@ -9,7 +9,7 @@ pip install -r requirements.txt
 python ./headless/chromium-headless.py $LOCAL_PLZ
 ```
 
-For scheduled downloading change the following in main.yml using [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07). Currently the download job is dispatched every monday at 10:00 :
+For scheduled downloading change the following in download.yml using [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07). Currently the download job is dispatched every monday at 10:00 :
 ```
 on:
   schedule:
