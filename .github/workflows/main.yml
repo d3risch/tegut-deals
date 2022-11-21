@@ -1,4 +1,4 @@
-name: download
+name: manual
 on: workflow_dispatch
 jobs:
   scrape:
