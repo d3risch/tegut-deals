@@ -18,5 +18,6 @@ jobs:
         run: python ./headless/chromium-headless.py
       - name: Move pdf to data folder
         run: |
-          mv ./headless/.*pdf ./data/
+          ls
+          mv ./*pdf ./data/
           ls ./data/
