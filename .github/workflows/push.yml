@@ -1,0 +1,22 @@
+name: auto
+on: workflow_dispatch
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+      - name: Removing Chrome and Chromium, installing new Chromium and installing requirements.txt
+        run: |
+          sudo apt purge google-chrome-stable
+          sudo apt purge chromium-browser
+          sudo apt install -y chromium-browser
+          pip install -r requirements.txt
+      - name: Downloading pdf
+        run: python ./headless/chromium-headless.py
+      - name: Move pdf to data folder
+        run: |
+          mv ./headless/.*pdf ./data/
+          ls ./data/
