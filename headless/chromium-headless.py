@@ -10,6 +10,7 @@ from selenium.webdriver.support import expected_conditions
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import TimeoutException
 from webdriver_manager.core.utils import ChromeType
+from webdriver_manager.core.utils import read_version_from_cmd, PATTERN
 
 
 if __name__ == "__main__":
@@ -20,7 +21,9 @@ if __name__ == "__main__":
     assert len(plz) == 5 and plz.isdigit()
 
     # Basic Chrome setup to run in headless mode.
-    chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+version = read_version_from_cmd("/usr/bin/chromium-browser --version", PATTERN["chromium"])
+driver_binary = FirefoxDriverManager(version=version).install()
+chrome_service = Service(ChromeDriverManager(version=version,chrome_type=ChromeType.CHROMIUM).install())
 
     chrome_options = Options()
     options = [
