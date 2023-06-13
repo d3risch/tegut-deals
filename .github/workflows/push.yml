@@ -12,7 +12,9 @@ jobs:
         with:
           python-version: '3.9'
       - name: Downloading pdf
-        run: python ./headless/chromium-headless.py
+        run: |
+          pip install -r requirements.txt
+          python ./headless/chromium-headless.py
       - name: Move pdf to data folder
         run: |
           mv ./*pdf ./data/
