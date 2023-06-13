@@ -18,7 +18,7 @@ if __name__ == "__main__":
     assert len(plz) == 5 and plz.isdigit()
 
     # Basic Chrome setup to run in headless mode.
-    service = Service('/usr/local/share/chrome_driver')
+    service = Service('/usr/local/share/chrome_driver/chromedriver')
 
     service.start()
     chrome_options = Options()
