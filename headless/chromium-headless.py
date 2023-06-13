@@ -21,9 +21,8 @@ if __name__ == "__main__":
     assert len(plz) == 5 and plz.isdigit()
 
     # Basic Chrome setup to run in headless mode.
-version = read_version_from_cmd("/usr/bin/chromium-browser --version", PATTERN["chromium"])
-driver_binary = FirefoxDriverManager(version=version).install()
-chrome_service = Service(ChromeDriverManager(version=version,chrome_type=ChromeType.CHROMIUM).install())
+    version = read_version_from_cmd("/usr/bin/chromium --version", PATTERN["chromium"])
+    chrome_service = Service(ChromeDriverManager(version=version,chrome_type=ChromeType.CHROMIUM).install())
 
     chrome_options = Options()
     options = [
