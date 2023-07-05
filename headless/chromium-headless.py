@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
         # Wait until list of supermarkets has loaded and click first one.
         try:
-            firstMarketInList = WebDriverWait(driver, 4).until(expected_conditions.element_to_be_clickable((By.XPATH, '/html/body/main/article/div/div/div/div[3]/div/div/div[2]/div/div/div[1]/ul/li[1]/a')))
+            firstMarketInList = WebDriverWait(driver, 4).until(expected_conditions.element_to_be_clickable((By.XPATH, '/html/body/main/article/div/div/div/div[2]/div/div/div[2]/div/div/div[1]/ul/li[1]/a')))
             firstMarketInList.click()
         except TimeoutException as ex:
             print("There are no Tegut stores near the given plz.")
